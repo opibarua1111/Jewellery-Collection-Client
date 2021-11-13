@@ -36,7 +36,7 @@ const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
     const [orders, setOrders] = useState();
     useEffect(() => {
-        fetch('http://localhost:5000/purchase/byEmail', {
+        fetch('https://salty-inlet-11821.herokuapp.com/purchase/byEmail', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -51,14 +51,14 @@ const MyOrders = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/purchases')
+        fetch('https://salty-inlet-11821.herokuapp.com/purchases')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
 
     //Delete Order
     const handleDeleteOrder = id => {
-        const url = `http://localhost:5000/purchases/${id}`;
+        const url = `https://salty-inlet-11821.herokuapp.com/purchases/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -76,7 +76,7 @@ const MyOrders = () => {
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
                 <TableHead>
                     <TableRow>
-                        <StyledTableCell>Title</StyledTableCell>
+                        <StyledTableCell>Product name</StyledTableCell>
                         <StyledTableCell align="right">Name</StyledTableCell>
                         <StyledTableCell align="right">Email</StyledTableCell>
                         <StyledTableCell align="right">City</StyledTableCell>

@@ -11,6 +11,7 @@ import Register from './pages/Login/Register/Register';
 import Purchase from './pages/Purchase/Purchase';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import Explore from './pages/Explore/Explore';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route path="/home">
               <Home></Home>
+            </Route>
+            <Route path="/explore">
+              <Explore></Explore>
             </Route>
             <PrivateRoute path="/purchase/:id">
               <Purchase></Purchase>

@@ -29,6 +29,8 @@ import MyOrders from '../MyOrders/MyOrders';
 import AddReview from '../AddReview/AddReview';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import Pay from '../Pay/Pay';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 const drawerWidth = 200;
 
@@ -46,25 +48,17 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link><br />
-            <Link to={`${url}/pay`}><Button color="inherit">Pay</Button></Link>
+            <Link to={`${url}`}><Button color="inherit">My Orders</Button></Link><br />
+            <Link to={`${url}/pay`}><Button color="inherit">Pay</Button></Link><br />
+            <Link to={`${url}/addReview`}><Button color="inherit">Add Review</Button></Link>
             {admin && <Box>
+                <Link to={`${url}/manageAllOrders`}><Button color="inherit">Manage-All-Orders</Button></Link>
+                <Link to={`${url}/ManageProducts`}><Button color="inherit">Manage-Products</Button></Link>
                 <Link to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
                 <Link to={`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
-                <Link to={`${url}/addReview`}><Button color="inherit">Add Review</Button></Link>
             </Box>}
             <br />
             <Button onClick={logOut} color="inherit">Logout</Button>
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
         </div>
     );
 
@@ -139,12 +133,18 @@ function Dashboard(props) {
                     <Route path={`${path}/addReview`}>
                         <AddReview></AddReview>
                     </Route>
-                    <Route path={`${path}/addProduct`}>
+                    <AdminRoute path={`${path}/addProduct`}>
                         <AddProduct></AddProduct>
-                    </Route>
-                    <Route path={`${path}/makeAdmin`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
-                    </Route>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageAllOrders`}>
+                        <ManageAllOrders></ManageAllOrders>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageProducts`}>
+                        <ManageProducts></ManageProducts>
+                    </AdminRoute>
                     <Route path={`${path}/pay`}>
                         <Pay></Pay>
                     </Route>

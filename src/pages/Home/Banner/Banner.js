@@ -12,8 +12,8 @@ const Banner = () => {
                     alt="First slide"
                 />
                 <Carousel.Caption className="banner_description">
-                    <h2 className="text-5xl text-white">TRAVEL TO DISCOVER THE WORLD</h2>
-                    <p className="text-white">tourism have become an essential part of our life as it refreshes the mind and reduces stress. It is also one of the fastest-growing industry</p>
+                    <h2 className="text-5xl text-white">Make them fun! Alliteration</h2>
+                    <p className="text-white">design without being too literal. Think about it: If all titles were literal</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className="banner_item w-full">
@@ -24,8 +24,8 @@ const Banner = () => {
                     alt="Second slide"
                 />
                 <Carousel.Caption className="banner_description">
-                    <h2 className="text-5xl text-white">EXPRIENCE FREEDOM</h2>
-                    <p className=" text-white">A tourism region is a geographical region that has been designated by a governmental organization or tourism bureau as having common cultural </p>
+                    <h2 className="text-5xl text-white">Best Jewellery</h2>
+                    <p className=" text-white">Relate it to your design without being too literal</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className="banner_item w-full ">
@@ -36,8 +36,8 @@ const Banner = () => {
                     alt="Third slide"
                 />
                 <Carousel.Caption className="banner_description align-middle">
-                    <h2 className="text-5xl text-white">CHANGE THE WHY YOU THINK</h2>
-                    <p className=" text-white">Tourism is the activities of people traveling to and staying in places outside their usual environment for leisure, business</p>
+                    <h2 className="text-5xl text-white">Rings are the kinds of jewelry</h2>
+                    <p className=" text-white">Bracelets are fashion accessories worn as ornaments around the wrist</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
