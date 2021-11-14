@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import initializeFirebase from "../pages/Login/Firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, getIdToken } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 
 
 initializeFirebase();
@@ -9,7 +9,6 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    // const [token, setToken] = useState('');
 
     const [admin, setAdmin] = useState(false);
 

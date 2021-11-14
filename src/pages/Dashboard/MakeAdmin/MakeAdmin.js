@@ -1,5 +1,6 @@
-import { Alert, Button, TextField } from '@mui/material';
+import { Alert, TextField } from '@mui/material';
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 
 const MakeAdmin = () => {
@@ -40,7 +41,7 @@ const MakeAdmin = () => {
                     type="email"
                     onBlur={handleOnBlur}
                     variant="standard" />
-                <Button variant="contained" type="submit">Make Admin</Button>
+                <Button variant="outline-success" type="submit">Make Admin</Button>
             </form>
             {success && <Alert severity="success">Assign admin successfully </Alert>}
         </div>

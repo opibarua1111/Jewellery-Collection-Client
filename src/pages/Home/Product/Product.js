@@ -1,6 +1,8 @@
-import { Card, CardContent, CardHeader, CardMedia, Typography, Button } from '@mui/material';
+import { Card, CardContent, CardHeader, CardMedia, Typography } from '@mui/material';
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './Product.css';
 
 const Product = (props) => {
     const { _id, name, description, img, price } = props.product;
@@ -12,6 +14,7 @@ const Product = (props) => {
             <CardMedia
                 component="img"
                 height="194"
+                className="image"
                 image={img}
                 alt="Paella dish"
             />
@@ -23,7 +26,7 @@ const Product = (props) => {
                     $ {price}
                 </Typography>
                 <Link to={`/purchase/${_id}`}>
-                    <Button variant="contained">Purchase Now</Button>
+                    <Button variant="outline-success">Purchase Now</Button>
                 </Link>
             </CardContent>
         </Card>

@@ -12,7 +12,7 @@ const Footer = () => {
     const twitter = <i class="fab fa-twitter-square"></i>
     const google = <i class="fab fa-google-plus-g"></i>
     return (
-        <div className="bg-dark p-5 text-white mt-5">
+        <div className="bg-black p-5 text-white mt-5">
             <Container>
                 <Row xs={1} md={2} lg={3}>
                     <Col xs className="text-start">

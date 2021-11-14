@@ -6,12 +6,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -31,6 +25,69 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import Pay from '../Pay/Pay';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import clsx from 'clsx';
+import { useButton } from '@mui/core/ButtonUnstyled';
+import { styled } from '@mui/system';
+
+const CustomButtonRoot = styled('button')`
+  background-color: cadetblue;
+  width: 100%;
+  padding: 7px 10px;
+  color: #fff;
+  font-weight: 600;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  transition: all 200ms ease;
+  cursor: pointer;
+  box-shadow: 0 4px 20px 0 rgba(61, 71, 82, 0.1), 0 0 0 0 rgba(0, 127, 255, 0);
+  border: none;
+  border-bottom: 1px solid;
+  border-bottom-color: darkcyan;
+
+  &:hover {
+    background-color: #2a6566;
+  }
+
+  &.active {
+    background-color: #004386;
+  }
+
+  &.focusVisible {
+    box-shadow: 0 4px 20px 0 rgba(61, 71, 82, 0.1), 0 0 0 5px rgba(0, 127, 255, 0.5);
+    outline: none;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: 0 0 0 0 rgba(0, 127, 255, 0);
+  }
+`;
+
+const CustomButton = React.forwardRef(function CustomButton(props, ref) {
+    const { children } = props;
+    const { active, disabled, focusVisible, getRootProps } = useButton({
+        ...props,
+        ref,
+        component: CustomButtonRoot,
+    });
+
+    const classes = {
+        active,
+        disabled,
+        focusVisible,
+    };
+
+    return (
+        <CustomButtonRoot {...getRootProps()} className={clsx(classes)}>
+            {children}
+        </CustomButtonRoot>
+    );
+});
+
+CustomButton.propTypes = {
+    children: PropTypes.node,
+};
 
 const drawerWidth = 200;
 
@@ -46,19 +103,29 @@ function Dashboard(props) {
 
     const drawer = (
         <div>
-            <Toolbar />
+            <Toolbar>
+                <Link to="/" style={{ textDecoration: 'none' }}>
+                    <Button variant="outlined" size="large">
+                        Go to home
+                    </Button>
+                </Link><br />
+            </Toolbar>
             <Divider />
-            <Link to={`${url}`}><Button color="inherit">My Orders</Button></Link><br />
-            <Link to={`${url}/pay`}><Button color="inherit">Pay</Button></Link><br />
-            <Link to={`${url}/addReview`}><Button color="inherit">Add Review</Button></Link>
-            {admin && <Box>
-                <Link to={`${url}/manageAllOrders`}><Button color="inherit">Manage-All-Orders</Button></Link>
-                <Link to={`${url}/ManageProducts`}><Button color="inherit">Manage-Products</Button></Link>
-                <Link to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
-                <Link to={`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
-            </Box>}
-            <br />
-            <Button onClick={logOut} color="inherit">Logout</Button>
+
+            {admin ? <Box>
+                <Link to={`${url}/manageAllOrders`}><CustomButton >Manage-All-Orders</CustomButton></Link><br />
+                <Link to={`${url}/ManageProducts`}><CustomButton >Manage-Products</CustomButton></Link><br />
+                <Link to={`${url}/makeAdmin`}><CustomButton >Make Admin</CustomButton></Link><br />
+                <Link to={`${url}/addProduct`}><CustomButton >Add Product</CustomButton></Link><br />
+            </Box>
+                :
+                <Box>
+                    <Link to={`${url}`}><CustomButton>My Orders</CustomButton></Link><br />
+                    <Link to={`${url}/pay`}><CustomButton>Pay</CustomButton></Link><br />
+                    <Link to={`${url}/addReview`}><CustomButton >Add Review</CustomButton></Link><br />
+                </Box>
+            }
+            <Button style={{ backgroundColor: 'crimson', color: 'white', width: '100%' }} onClick={logOut} color="inherit">Logout</Button>
         </div>
     );
 
@@ -74,7 +141,7 @@ function Dashboard(props) {
                     ml: { sm: `${drawerWidth}px` },
                 }}
             >
-                <Toolbar>
+                <Toolbar style={{ backgroundColor: 'lightseagreen' }}>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
