@@ -6,7 +6,7 @@ import { faUserShield, faUsers } from '@fortawesome/free-solid-svg-icons'
 const DashboardAdminHome = () => {
     const [allUsers, setAllUsers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://salty-inlet-11821.herokuapp.com/users')
             .then(res => res.json())
             .then(data => setAllUsers(data))
     }, [])

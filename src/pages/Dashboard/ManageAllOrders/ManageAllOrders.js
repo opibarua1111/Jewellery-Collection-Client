@@ -52,7 +52,6 @@ const ManageAllOrders = () => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     alert("Ordered Shipped Successfully");
-
                 }
             })
     }

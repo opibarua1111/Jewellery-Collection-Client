@@ -11,7 +11,7 @@ const Purchase = () => {
     const { id } = useParams();
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://salty-inlet-11821.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [])
@@ -22,7 +22,7 @@ const Purchase = () => {
             status: "pending",
             title: name
         }
-        fetch('http://localhost:5000/purcheases', {
+        fetch('https://salty-inlet-11821.herokuapp.com/purcheases', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -56,5 +56,6 @@ const Purchase = () => {
         </div>
     );
 };
+
 
 export default Purchase;
