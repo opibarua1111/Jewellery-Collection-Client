@@ -5,7 +5,8 @@
   align-items: center;
 }
 .add-product input,
-textarea {
+textarea,
+.button {
   display: block;
   margin-top: 30px;
   padding: 5px;

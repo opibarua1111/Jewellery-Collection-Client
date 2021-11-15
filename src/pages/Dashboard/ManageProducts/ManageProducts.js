@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Button } from 'react-bootstrap';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -67,7 +68,7 @@ const ManageProducts = () => {
                             <StyledTableCell align="center">{product.name}</StyledTableCell>
                             <StyledTableCell align="center">{product.price}</StyledTableCell>
                             <StyledTableCell align="center">
-                                <button className="btn btn-danger mt-2" onClick={() => handleDeleteProducts(product._id)} >Delete</button>
+                                <Button style={{ border: 'none', color: 'white' }} className="btn btn-danger mt-2" onClick={() => handleDeleteProducts(product._id)} >Delete</Button>
                             </StyledTableCell>
                         </StyledTableRow>
                     ))}

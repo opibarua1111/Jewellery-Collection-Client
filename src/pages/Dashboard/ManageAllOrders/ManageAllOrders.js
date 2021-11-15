@@ -82,7 +82,7 @@ const ManageAllOrders = () => {
                             <StyledTableCell align="center">{purchaseProduct.status}</StyledTableCell>
                             <StyledTableCell align="center">
                                 <div className="d-flex justify-content-around">
-                                    <button className="btn btn-info mt-2" style={{ color: 'white' }} value="Shipped" onClick={() => handleStatus(purchaseProduct._id)} >Shipped</button>
+                                    <button className="btn btn-success mt-2" style={{ color: 'white' }} value="Shipped" onClick={() => handleStatus(purchaseProduct._id)} >Shipped</button>
                                 </div>
                             </StyledTableCell>
                         </StyledTableRow>

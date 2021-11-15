@@ -2,6 +2,7 @@ import { Button, Container, Grid, TextField, Typography, CircularProgress, Alert
 import React, { useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import './Login.css';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
@@ -27,8 +28,8 @@ const Login = () => {
     return (
         <Container>
             <Grid container spacing={2}>
-                <Grid item sx={{ mt: 8 }} xs={12} md={6} style={{ margin: "auto" }}>
-                    <Typography variant="body1" gutterBottom>
+                <Grid item sx={{ mt: 8 }} xs={12} md={6} style={{ margin: "auto", backgroundColor: 'lightgoldenrodyellow', borderRadius: '30px', position: 'absolute', bottom: '20%', left: 0, transform: "translate(50%)" }}>
+                    <Typography variant="h4" gutterBottom sx={{ color: "teal", fontWeight: '700' }}>
                         Login
                     </Typography>
                     <form onSubmit={handleLoginSubmit}>
@@ -48,7 +49,7 @@ const Login = () => {
                             onBlur={handleOnChange}
                             variant="standard" />
 
-                        <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
+                        <Button className="button" sx={{ width: '75%', m: 1, backgroundColor: 'teal', color: 'white' }} variant="outline-success" type="submit">Login</Button>
                         <NavLink
                             style={{ textDecoration: 'none' }}
                             to="/register">
@@ -59,7 +60,7 @@ const Login = () => {
                         {authError && <Alert severity="error">{authError}</Alert>}
                     </form>
                     <p>===========OR==========</p>
-                    <Button onClick={handleGoogleSignIn} variant="Contained">Google Sign In</Button>
+                    <Button className="button" sx={{ marginBottom: '20px', backgroundColor: 'teal', color: 'white' }} variant="outline-success" onClick={handleGoogleSignIn} type="submit">Google Sign In</Button>
                 </Grid>
             </Grid>
         </Container>

@@ -50,7 +50,7 @@ const Purchase = () => {
                     <input placeholder="Address" defaultValue="" {...register("address")} />
                     <input placeholder="City" defaultValue="" {...register("city")} />
                     <input placeholder="Phone" defaultValue="" {...register("phone")} />
-                    <input type="submit" />
+                    <input style={{ backgroundColor: 'teal', color: 'white' }} type="submit" />
                 </form>
             </div>
         </div>

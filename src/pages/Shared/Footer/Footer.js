@@ -26,7 +26,6 @@ const Footer = () => {
                         <Col xs><input type="text" className="w-75 round-lg mb-2" /></Col>
                         <Col xs><button className="btn btn-outline-secondary">Subscribe</button></Col>
                     </Col>
-
                     <Col xs className="text-start">
                         <Col xs><h5>Others</h5></Col>
                         <Col xs><div className="custom facebook">

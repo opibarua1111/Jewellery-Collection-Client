@@ -28,6 +28,7 @@ import ManageProducts from '../ManageProducts/ManageProducts';
 import clsx from 'clsx';
 import { useButton } from '@mui/core/ButtonUnstyled';
 import { styled } from '@mui/system';
+import DashboardHome from '../DashboardHome/DashboardHome/DashboardHome';
 
 const CustomButtonRoot = styled('button')`
   background-color: cadetblue;
@@ -120,7 +121,7 @@ function Dashboard(props) {
             </Box>
                 :
                 <Box>
-                    <Link to={`${url}`}><CustomButton>My Orders</CustomButton></Link><br />
+                    <Link to={`${url}/myOrder`}><CustomButton>My Orders</CustomButton></Link><br />
                     <Link to={`${url}/pay`}><CustomButton>Pay</CustomButton></Link><br />
                     <Link to={`${url}/addReview`}><CustomButton >Add Review</CustomButton></Link><br />
                 </Box>
@@ -158,7 +159,7 @@ function Dashboard(props) {
             </AppBar>
             <Box
                 component="nav"
-                sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+                sx={{ width: { sm: drawerWidth, xs: drawerWidth }, flexShrink: { sm: 0 } }}
                 aria-label="mailbox folders"
             >
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -195,6 +196,9 @@ function Dashboard(props) {
                 <Toolbar />
                 <Switch>
                     <Route exact path={path}>
+                        <DashboardHome></DashboardHome>
+                    </Route>
+                    <Route path={`${path}/myOrder`}>
                         <MyOrders></MyOrders>
                     </Route>
                     <Route path={`${path}/addReview`}>

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import './AddProduct.css';
 
@@ -23,7 +24,7 @@ const AddProduct = () => {
                 <textarea className="rounded-lg" {...register("description")} placeholder="Description" />
                 <input className="h-10 rounded-lg" type="number" {...register("price")} placeholder="Price" />
                 <input className="h-10 rounded-lg" {...register("img")} placeholder="image url" />
-                <input className="h-8 rounded-lg bg-indigo-700" type="submit" />
+                <Button className="button" variant="outline-success" type="submit">Submit</Button>
             </form>
         </div>
     );
