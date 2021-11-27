@@ -15,7 +15,7 @@ const AboutUs = () => {
                     <h5 className="d-flex align-items-center ">Jewelry Store Nyc safe and secure! Discover us now! Easy Acces To Information. Simple in use. Multiple sources combined. All the Answers. Fast and trusted.</h5>
                 </Col>
                 <Col className="col-lg-6 photo sm:mt-5">
-                    <img src="https://i.ibb.co/JqF1shv/jewellery-about.jpg" alt="" />
+                    <img src="https://i.ibb.co/h8JyRxQ/jewellery-about.jpg" alt="" />
                 </Col>
             </Row>
 

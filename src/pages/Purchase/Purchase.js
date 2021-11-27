@@ -3,7 +3,11 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import Navigation from '../Shared/Navigation/Navigation';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 import './Purchase.css';
+import Footer from '../Shared/Footer/Footer';
 
 const Purchase = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -38,11 +42,11 @@ const Purchase = () => {
             })
     };
     return (
-        <div>
-            <div>
+        <Box>
+            <Box>
                 <Navigation></Navigation>
-            </div>
-            <div>
+            </Box>
+            <Box>
                 <form className="order-form" onSubmit={handleSubmit(onSubmit)}>
                     <input defaultValue={user.displayName} {...register("name")} />
                     <input defaultValue={user.email} {...register("email", { required: true })} />
@@ -52,8 +56,11 @@ const Purchase = () => {
                     <input placeholder="Phone" defaultValue="" {...register("phone")} />
                     <input style={{ backgroundColor: 'teal', color: 'white' }} type="submit" />
                 </form>
-            </div>
-        </div>
+            </Box>
+            <Box>
+                <Footer></Footer>
+            </Box>
+        </Box>
     );
 };
 

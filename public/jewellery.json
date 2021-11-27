@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Lac jewelry",
+    "img": "https://i.ibb.co/fvrn2VJ/jewellery1.png",
+    "description": "Lac jewelry is colourful and intricate. The designs constantly change in line with new trends and styles. It extends to all the wearables",
+    "price": "100"
+  },
+  {
+    "name": "Maang teeka",
+    "img": "https://i.ibb.co/9VLvvL0/jewellery11.png",
+    "description": " maang tikka is a piece of jewellery typically worn by Indian women on the forehead, and are similar to the concept of head harnesses.",
+    "price": "120"
+  },
+  {
+    "name": "Dangles and drops",
+    "img": "https://i.ibb.co/HCwgkVC/jewellery3.png",
+    "description": "Drop hang just below the earlobe and are stationary they do not move when you walk or swing your head",
+    "price": "90"
+  },
+  {
+    "name": "Pearl neckpiece",
+    "img": "https://i.ibb.co/KVmFkKZ/jewellery7.png",
+    "description": "A pearl necklace is a slang term referring to a sexual act in which a man ejaculates semen on or near the neck.",
+    "price": "300"
+  },
+  {
+    "name": "Oxidized bangles",
+    "img": "https://i.ibb.co/TKVx57r/jewellery14.png",
+    "description": "Oxidised silver is created by exposing sterling silver to sulphur. ... Describing 'oxidised silver",
+    "price": "200"
+  },
+  {
+    "name": "Toe ring",
+    "img": "https://i.ibb.co/s2zzhgj/jewellery5.png",
+    "description": "Toe ring (also known as bicchiya) is commonly worn by married Hindu women in India the symbol of being married",
+    "price": "150"
+  },
+  {
+    "name": "Meenakari Jewlery",
+    "img": "https://i.ibb.co/t2M7yXs/jewellery6.png",
+    "description": "Meenakari is a Persian art of colouring the surface of metals by fusing brilliant colours",
+    "price": "250"
+  },
+  {
+    "name": "Polki jewelry",
+    "img": "https://i.ibb.co/RpN0fy8/jewellery2.png",
+    "description": "Polki is essentially an uncut diamond that is mined from the earth in a natural way without any enhancement ",
+    "price": "280"
+  },
+  {
+    "name": "Ear piercings",
+    "img": "https://i.ibb.co/vwkxJ85/jewellery13.png",
+    "description": "The practice of using a needle or needle gun to make holes through the ear lobe or other parts of the ear",
+    "price": "170"
+  },
+  {
+    "name": "Personalized pendants",
+    "img": "https://i.ibb.co/MC7ywvS/jewellery8.png",
+    "description": "pendants are purely decorative. But a pendant may also hold a picture or a lock of hair of a lover or a child.",
+    "price": "100"
+  },
+  {
+    "name": "Bangle bracelets",
+    "img": "https://i.ibb.co/RYMRX4p/jewellery10.png",
+    "description": "A bangle is an inflexible but loose-fitting bracelet, worn alone or with many other bangles, on your wrist.",
+    "price": "160"
+  },
+  {
+    "name": "Choker necklace",
+    "img": "https://i.ibb.co/crMyW8w/jewellery12.png",
+    "description": "A choker is a close-fitting necklace worn around the neck, typically 14 inch to 16 inch in length.",
+    "price": "120"
+  }
+]

@@ -10,9 +10,11 @@ const Navigation = () => {
     const { user, logOut } = useAuth();
     return (
         <>
-            <Navbar variant="dark" fixed="top" sticky="top" collapseOnSelect expand="lg" className="bg-black">
+            <Navbar variant="dark" fixed="top" sticky="top" collapseOnSelect expand="lg" style={{ backgroundColor: 'currentColor' }}>
                 <Container>
-                    <Navbar.Brand href="#home">Jewellery</Navbar.Brand>
+                    <Navbar.Brand to="/home#home" className="text-white">
+                        <img src="https://i.ibb.co/bg6RgV2/Diamond-Icon.png" width="15%" className="inline-block" alt="" />Jewellery
+                    </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={Link} to="/" className="text-white">Home</Nav.Link>

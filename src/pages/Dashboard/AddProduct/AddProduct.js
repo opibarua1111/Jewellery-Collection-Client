@@ -17,7 +17,7 @@ const AddProduct = () => {
             })
     };
     return (
-        <div className="add-service bg-gray-500 w-6/12 mx-auto mb-10 pb-3 rounded-lg">
+        <div className="add-service mx-auto mb-10 pb-3 rounded-lg">
             <h2 className="my-5 pt-3 text-2xl font-bold text-gray-700">Please Add a Product</h2>
             <form className="add-product" onSubmit={handleSubmit(onSubmit)}>
                 <input className="h-10 rounded-lg" type="text" {...register("title")} placeholder="Title" />
