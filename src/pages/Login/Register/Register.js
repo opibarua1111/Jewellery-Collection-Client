@@ -27,8 +27,8 @@ const Register = () => {
 
     return (
         <Container>
-            <Grid container spacing={2}>
-                <Grid item sx={{ mt: 8 }} xs={12} md={6} style={{ margin: "auto", backgroundColor: 'lightgoldenrodyellow', borderRadius: '30px', position: 'absolute', bottom: '20%', left: 0, transform: "translate(50%)" }}>
+            <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
+                <Grid item xs={4} sm={8} md={6} style={{ margin: "auto", backgroundColor: 'lightgoldenrodyellow', borderRadius: '30px', marginTop: '70px', padding: '40px' }}>
                     <Typography variant="h4" sx={{ color: "teal", fontWeight: '700' }} gutterBottom>
                         Register
                     </Typography>

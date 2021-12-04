@@ -4,7 +4,6 @@ import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import Navigation from '../Shared/Navigation/Navigation';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import './Purchase.css';
 import Footer from '../Shared/Footer/Footer';
@@ -46,17 +45,27 @@ const Purchase = () => {
             <Box>
                 <Navigation></Navigation>
             </Box>
-            <Box>
-                <form className="order-form" onSubmit={handleSubmit(onSubmit)}>
-                    <input defaultValue={user.displayName} {...register("name")} />
-                    <input defaultValue={user.email} {...register("email", { required: true })} />
-                    {errors.email && <span className="error">This field is required</span>}
-                    <input placeholder="Address" defaultValue="" {...register("address")} />
-                    <input placeholder="City" defaultValue="" {...register("city")} />
-                    <input placeholder="Phone" defaultValue="" {...register("phone")} />
-                    <input style={{ backgroundColor: 'teal', color: 'white' }} type="submit" />
-                </form>
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                    <Grid item xs={4} sm={4} md={6}>
+                        <Box>
+                            <form className="order-form" onSubmit={handleSubmit(onSubmit)}>
+                                <input defaultValue={user.displayName} {...register("name")} />
+                                <input defaultValue={user.email} {...register("email", { required: true })} />
+                                {errors.email && <span className="error">This field is required</span>}
+                                <input placeholder="Address" defaultValue="" {...register("address")} />
+                                <input placeholder="City" defaultValue="" {...register("city")} />
+                                <input placeholder="Phone" defaultValue="" {...register("phone")} />
+                                <input style={{ backgroundColor: 'teal', color: 'white' }} type="submit" />
+                            </form>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={4} sm={4} md={6}>
+
+                    </Grid>
+                </Grid>
             </Box>
+
             <Box>
                 <Footer></Footer>
             </Box>
