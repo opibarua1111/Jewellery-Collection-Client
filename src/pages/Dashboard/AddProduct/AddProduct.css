@@ -1,8 +1,6 @@
 .add-service form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .add-product input,
 .add-product textarea,

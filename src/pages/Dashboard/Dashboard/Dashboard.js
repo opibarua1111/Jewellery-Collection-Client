@@ -126,7 +126,7 @@ function Dashboard(props) {
                     <Link to={`${url}/addReview`}><CustomButton >Add Review</CustomButton></Link><br />
                 </Box>
             }
-            <Button style={{ backgroundColor: 'crimson', color: 'white', width: '100%' }} onClick={logOut} color="inherit">Logout</Button>
+            <Button style={{ backgroundColor: 'crimson', color: 'white', width: '100%' }} onClick={logOut} color="inherit"><i class="fas fa-sign-out-alt"></i> Logout</Button>
         </div>
     );
 

@@ -2,6 +2,7 @@ import { Alert, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
+import './MakeAdmin.css';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
@@ -36,6 +37,7 @@ const MakeAdmin = () => {
             <h2>Make an Admin</h2>
             <form onSubmit={handleAdminSubmit}>
                 <TextField
+                    className="makeAdmin"
                     sx={{ width: '40%' }}
                     label="Email"
                     type="email"
