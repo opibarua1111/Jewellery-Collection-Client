@@ -5,8 +5,10 @@ import useAuth from '../../hooks/useAuth';
 import Navigation from '../Shared/Navigation/Navigation';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import { Button } from 'react-bootstrap';
 import './Purchase.css';
 import Footer from '../Shared/Footer/Footer';
+import { Card, CardContent, CardHeader, CardMedia, Typography } from '@mui/material';
 
 const Purchase = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -45,10 +47,35 @@ const Purchase = () => {
             <Box>
                 <Navigation></Navigation>
             </Box>
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+            <Box sx={{ flexGrow: 1, marginTop: '30px' }}>
+                <Typography variant="h4" color="text.secondary" sx={{ marginBottom: '30px' }}>
+                    Purchase Your Product
+                </Typography>
+                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <Grid item xs={4} sm={4} md={4} >
+                        <Card>
+                            <CardHeader
+                                title={product.name}
+                            />
+                            <CardMedia
+                                component="img"
+                                height="194"
+                                className="image"
+                                image={product.img}
+                                alt="Paella dish"
+                            />
+                            <CardContent>
+                                <Typography variant="body2" color="text.secondary">
+                                    {product.description}
+                                </Typography>
+                                <Typography variant="h6" color="text.secondary">
+                                    $ {product.price}
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
                     <Grid item xs={4} sm={4} md={6}>
-                        <Box>
+                        <Box className="justify-center" sx={{ display: 'flex', justifyContent: 'center' }}>
                             <form className="order-form" onSubmit={handleSubmit(onSubmit)}>
                                 <input defaultValue={user.displayName} {...register("name")} />
                                 <input defaultValue={user.email} {...register("email", { required: true })} />
@@ -56,12 +83,9 @@ const Purchase = () => {
                                 <input placeholder="Address" defaultValue="" {...register("address")} />
                                 <input placeholder="City" defaultValue="" {...register("city")} />
                                 <input placeholder="Phone" defaultValue="" {...register("phone")} />
-                                <input style={{ backgroundColor: 'teal', color: 'white' }} type="submit" />
+                                <Button className="button" variant="outline-success" type="submit">Submit</Button>
                             </form>
                         </Box>
-                    </Grid>
-                    <Grid item xs={4} sm={4} md={6}>
-
                     </Grid>
                 </Grid>
             </Box>

@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material';
+import { Button } from 'react-bootstrap';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
@@ -37,7 +38,7 @@ const AddReview = () => {
                 {errors.email && <span className="error">This field is required</span>}
                 <textarea className="rounded-lg" {...register("description")} placeholder="Description" />
                 <input placeholder="rating" defaultValue="" {...register("rating")} />
-                <input type="submit" />
+                <Button className="button" variant="outline-success" type="submit">Submit</Button>
             </form>
         </div>
     );
